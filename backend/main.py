@@ -1,5 +1,6 @@
 from datetime import timedelta
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 # Core Settings & Database
@@ -43,10 +44,11 @@ def sign_up(data: RegistrationRequest, db: Session = Depends(get_db)):
 
 
 @app.post("/login", response_model=Token, tags=["Auth"])
-def log_in(data: LoginRequest, db: Session = Depends(get_db)):
-    db_user = user_crud.get_user_by_email(db, email=data.email)
+def log_in(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    # SwaggerUI strictly sends a Form with a 'username' field. We pass this internally as the email.
+    db_user = user_crud.get_user_by_email(db, email=form_data.username)
     
-    if not db_user or not security.verify_password(data.password, db_user.hashed_password):
+    if not db_user or not security.verify_password(form_data.password, db_user.hashed_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, 
             detail="Invalid email or password",
