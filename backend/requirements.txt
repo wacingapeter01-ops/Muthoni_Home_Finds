@@ -1,0 +1,15 @@
+# Core application dependecies
+fastapi
+uvicorn[standard]
+pydantic[email]
+pydantic-settings
+requests
+
+# Database
+sqlalchemy
+psycopg2-binary
+
+# Security & Authentication
+passlib[bcrypt]
+python-jose[cryptography]
+python-dotenv

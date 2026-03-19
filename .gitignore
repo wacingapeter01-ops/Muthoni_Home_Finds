@@ -1,0 +1,22 @@
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Environment Variables (CRITICAL: Never commit secrets!)
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local Databases
+*.db
+*.sqlite3
+
+# Node/React (For Phase 2)
+node_modules/
+dist/
+.DS_Store
