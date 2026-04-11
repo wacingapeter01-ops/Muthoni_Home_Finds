@@ -1,0 +1,205 @@
+/* =====================================================
+   MUTHONI HOME FINDS — HomePage Styles
+   ===================================================== */
+
+.homepage {
+  min-height: 100vh;
+  background: var(--clr-bg);
+}
+
+/* ── Slim Shop Banner ── */
+.shop-banner {
+  background: var(--clr-primary);
+  color: #fff;
+  padding: 32px 0 28px;
+}
+
+.shop-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.shop-banner__text {
+  flex-shrink: 0;
+}
+
+.shop-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.shop-banner__sub {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+  max-width: 360px;
+}
+
+/* ── Search Bar ── */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  flex: 1;
+  max-width: 520px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.search-bar:focus-within {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.search-bar__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 13px 16px;
+  font-size: 0.95rem;
+  color: #fff;
+  font-family: var(--font-body);
+}
+
+.search-bar__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-bar__btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 18px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar__btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Fuzzy suggestion ── */
+.search-suggestion {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 4px;
+  animation: fadeSlideIn 0.3s ease;
+}
+
+.search-suggestion__link {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0 2px;
+  transition: opacity 0.2s;
+}
+
+.search-suggestion__link:hover { opacity: 0.8; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Collection ── */
+.collection {
+  padding-top: 28px;
+  padding-bottom: 100px;
+}
+
+.collection__count {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Active Filter Pill ── */
+.active-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 8px 18px;
+  background: #f5f5f5;
+  border: 1px solid var(--clr-border);
+  border-radius: 99px;
+  font-size: 0.88rem;
+}
+
+.active-filter__label {
+  color: var(--clr-text-secondary);
+}
+
+.active-filter__label strong {
+  color: var(--clr-primary);
+}
+
+.active-filter__clear {
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c62828;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.active-filter__clear:hover {
+  background: rgba(198, 40, 40, 0.07);
+}
+
+/* ── Empty State ── */
+.collection__empty {
+  text-align: center;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: var(--clr-text-secondary);
+}
+
+.empty-icon { font-size: 3rem; }
+
+.loading-text {
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .shop-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .search-bar { max-width: 100%; width: 100%; }
+  .shop-banner__sub { display: none; }
+}

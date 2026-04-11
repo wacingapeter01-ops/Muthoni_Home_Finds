@@ -12,7 +12,7 @@ router = APIRouter(
     tags=["Safaricom M-Pesa Integration"]
 )
 
-@router.post("/stkpush/{order_id}")
+@router.api_route("/stkpush/{order_id}", methods=["GET", "POST"])
 def trigger_mpesa_payment(order_id: int, phone_number: str, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     """
     Called strictly from the frontend immediately after a Cart creates an Order.

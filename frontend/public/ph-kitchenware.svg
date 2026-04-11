@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#F5F0EB"/>
+  <!-- Pot body -->
+  <rect x="110" y="180" width="180" height="130" rx="16" fill="#C8C0B8"/>
+  <!-- Pot lid -->
+  <rect x="100" y="155" width="200" height="32" rx="10" fill="#B0A89E"/>
+  <!-- Lid handle -->
+  <rect x="175" y="130" width="50" height="28" rx="8" fill="#C8C0B8"/>
+  <!-- Left handle -->
+  <rect x="75" y="205" width="35" height="20" rx="8" fill="#B0A89E"/>
+  <!-- Right handle -->
+  <rect x="290" y="205" width="35" height="20" rx="8" fill="#B0A89E"/>
+  <!-- Steam lines -->
+  <path d="M165 125 Q170 105 165 85" stroke="#D4C9BE" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 118 Q205 98 200 78" stroke="#D4C9BE" stroke-width="4" stroke-linecap="round"/>
+  <path d="M235 125 Q240 105 235 85" stroke="#D4C9BE" stroke-width="4" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="200" y="358" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#9E9590" letter-spacing="3">KITCHENWARE</text>
+</svg>

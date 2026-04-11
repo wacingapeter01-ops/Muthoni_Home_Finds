@@ -22,10 +22,21 @@ from routers import products
 from routers import orders
 from routers import payment
 
+from fastapi.middleware.cors import CORSMiddleware
+
 # Automatically create tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)
+
+# Define Origin Policy for UI communication
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Hooking our detached routers into the core application!
 app.include_router(products.router, prefix="/api/v1")

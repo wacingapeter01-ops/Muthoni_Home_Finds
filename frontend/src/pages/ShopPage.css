@@ -1,0 +1,24 @@
+.shop-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.shop-header__sub {
+  color: var(--clr-text-secondary);
+  margin-top: 8px;
+}
+.shop-header__search {
+  width: 280px;
+}
+.shop-empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--clr-text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.shop-empty p { font-size: 1.1rem; }

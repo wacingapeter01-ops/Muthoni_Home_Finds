@@ -51,9 +51,15 @@ class MpesaClient:
             "TransactionDesc": f"Payment for Order #{order_id}"
         }
         
-        response = requests.post(url, json=payload, headers=headers)
-        response.raise_for_status()
-        return response.json()
+        try:
+            response = requests.post(url, json=payload, headers=headers)
+            print(f"DEBUG: Safaricom Response Status: {response.status_code}")
+            print(f"DEBUG: Safaricom Body: {response.text}")
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.HTTPError as e:
+            print(f"DEBUG: STK Push HTTP Error: {e.response.text}")
+            raise e
 
 # Initializing global interface
 mpesa_client = MpesaClient()
